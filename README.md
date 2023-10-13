@@ -40,7 +40,7 @@ Se creo un super usuario para el admin, Us: Matias Pass: pacematias
 Se creo un usuario, Us:Profe Pass: python123, Alumno1 python123
 
 # Test
-Estan cargados en el archivo xlsx del proyecto
+Estan cargados en el archivo del proyecto Casos de prueba.xlsx
 
 # Video Explicacion
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Baltimora Lenceria</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href={% static 'AppBalti/assets/favicon.png'%} />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" type="text/css" href="{% static 'AppBalti/css/styles_aboutbalti.css' %}" /> 
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style ="background-color: rgb(56, 83, 236)" id="mainNav">
+            <div class="container">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+                Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href={% url 'Inicio' %}>Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'Puntos_De_Venta' %}>Puntos de venta</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'Conjunto' %}>Conjuntos</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'Bombachas' %}>Bombachas</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'Dormir' %}>Dormir</a></li>
+                        
+                        {% if request.user.is_authenticated %}
+                        <p style="color: white">Hola {{user.username}}</p>
+                        {% with user.avatar_set.first as unAvatar %}
+                        {% if unAvatar %}
+                        <p><img src="{{unAvatar.imagen.url}}" alt="---" style = "max-width: 50px ;"></p>
+                        {% endif %}
+
+                        {% endwith %}
+                        
+                        <p> <a class="btn btn-secondary btn-info text-uppercase" href={% url 'Agregar_Avatar' %}>Agregar Avatar</a> </p>
+                        <p> <a class="btn btn-secondary btn-danger text-uppercase" href={% url 'Logout' %}>Cerrar Sesión</a> </p>
+                        <p> <a class="btn btn-secondary btn-info text-uppercase" href={% url 'Editar Usuario' %}>Editar Perfil</a> </p>
+
+                           
+                        {% endif %}
+                        <li class="nav-item"><a class="nav-link" href={% url 'About_Me' %}>Acerca de mi</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <section id="contact"> 
+            <div class="container">
+                <h2 class="section-heading text-uppercase">{% block titulo %}{% endblock titulo %}</h2>
+                <h1 class="section-heading text-uppercase">{% block titulo2 %}{% endblock titulo2 %}</h1>
+                <img src={%  static 'AppBalti/assets/img/logo.png' %}  height = "120" width="280"/></a><br>
+                {% block botones_formularios %}{% endblock botones_formularios %}
+                {% block formularios %}{% endblock formularios %}
+            </div>
+        </section>
+        {% block listado %}{% endblock listado %}    
+    </body>
+</html>    
+
+
+
+       
+ 

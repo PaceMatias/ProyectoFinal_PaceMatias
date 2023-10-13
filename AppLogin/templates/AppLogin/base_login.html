@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Baltimora Lenceria</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href={% static 'AppBalti/assets/favicon.png'%} />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'AppLogin/css/styles_Login.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style= "background-color:darksalmon" >
+            <div class="text-center my-5">
+                <img src={%  static 'AppBalti/assets/img/logo.png' %} style="text-align: center;" alt="..." />
+                <h1 class="text-white fs-3 fw-bolder">{% block logueo %}{% endblock logueo %}</h1>
+            
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                       <h2>{% block mensaje %}{% endblock mensaje %}</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+    </body>
+</html>

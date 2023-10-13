@@ -1,0 +1,16 @@
+{%extends "AppBalti/base_balti.html" %}
+{% load static %}
+{% block titulo %}
+
+    {{mensaje}}<br>Preparate para sorprenderte
+{% endblock titulo %}
+
+{% block titulo2 %}
+Baltimora<br>Lencería de diseño!!
+{% endblock titulo2 %}
+
+{% block botones_formularios %}
+{% if not request.user.is_authenticated %}
+<a class="btn btn-primary btn-xl text-uppercase" href={% url 'Login' %}>Ingresar</a>
+{% endif %}
+{% endblock botones_formularios %}

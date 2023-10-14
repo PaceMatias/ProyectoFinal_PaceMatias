@@ -44,5 +44,5 @@ Estan cargados en el archivo del proyecto Casos de prueba.xlsx
 
 # Video Explicacion
 
-https://us05web.zoom.us/clips/share/BHVzMDQggEuPFq1FDh7PRum9l2OirCHZVBR1UdGGC3CwpqCR23w
+https://us05web.zoom.us/clips/share/BHVzMDQgjUdJxmbEvnuJBQlPm5F9ud7d2imE3WSYwW8p3rw9e6w
 
